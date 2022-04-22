@@ -59,10 +59,30 @@ h1 {
     border-radius: 2px;
 }
 
+.btn-clear {
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+.btn-clear:hover {
+    background-color: rgb(192, 192, 192);
+}
+
 .btn-qtd-pixels:hover {
     background-color: rgb(192, 192, 192);
 }
 
 .input{
     margin-bottom: 20px;
+}
+
+#pixel-board {
+    width: 205px;
+    height: 205px;
+    margin-left: 430px;
+    text-align: center;
 }

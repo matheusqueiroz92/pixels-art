@@ -8,6 +8,7 @@ window.onload = function() {
     let corPixel = 'black';
 
     let pixelBoard = document.getElementById('pixel-board');
+    let container = document.getElementById('container');
 
     for (let i = 0; i < 5; i += 1) {
         let listPixel = document.createElement('li');
@@ -57,12 +58,28 @@ window.onload = function() {
         corVerde.className = 'color selected';
     });
 
-    document.addEventListener('click', function(e){
+    pixelBoard.addEventListener('click', function(e){
         clickPixel = e.target.id;
         let alteraCorPixel = document.getElementById(clickPixel);
         alteraCorPixel.style.backgroundColor = corPixel;
         console.log(alteraCorPixel);
-    });     
+    });
+
+    let buttonClear = document.createElement('button');
+    container.appendChild(buttonClear);
+    buttonClear.className = 'btn-clear';
+    buttonClear.id = 'clear-board';
+    buttonClear.innerText = 'Limpar';
+
+    buttonClear.addEventListener('click', function() {
+        let listaDePixels = document.querySelectorAll('.pixel');
+        for (let i3 = 0; i3 < listaDePixels.length; i3 += 1) {
+            listaDePixels[i3].style.backgroundColor = 'white';   
+        }
+        console.log(listaDePixels);
+    });
+
+    
     
     // let calculoTamanho = document.getElementById('calculo-tamanho');
 
