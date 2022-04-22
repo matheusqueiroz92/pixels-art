@@ -5,6 +5,7 @@ window.onload = function() {
     const corVerde = document.getElementById('color-green');
 
     corPreta.className = 'color selected';
+    let corPixel = 'black';
 
     let pixelBoard = document.getElementById('pixel-board');
 
@@ -12,55 +13,56 @@ window.onload = function() {
         let listPixel = document.createElement('li');
         pixelBoard.appendChild(listPixel);
         listPixel[i];
+        listPixel.id = 'linha'+[i];
+        listPixel.className = 'listaDePixels';
         listPixel.style.listStyle = 'none';
         for (let i2 = 0; i2 < 5; i2 += 1){
             let colPixel = document.createElement('div');
             listPixel.appendChild(colPixel);
             colPixel[i2];
             colPixel.className = 'pixel';
-            colPixel.id = 'li'+[i]+'pixel'+[i2];
+            colPixel.id = 'linha'+[i]+'pixel'+[i2];
         }
     }
 
     corPreta.addEventListener('click', function(){
-        //let corPixelPreta = corPreta.style.backgroundColor;
+        corPixel = 'black';
         corPreta.className = 'color selected';
         corVermelha.className = 'color';
         corAzul.className = 'color';
         corVerde.className = 'color';
-    })
+    });
 
     corVermelha.addEventListener('click', function(){
-        //let corPixelVermelha = corVermelha.style.backgroundColor;
+        corPixel = 'red';
         corVermelha.className = 'color selected';
         corPreta.className = 'color';
         corAzul.className = 'color';
         corVerde.className = 'color';
-        
-    })
-   
+    });
+
     corAzul.addEventListener('click', function(){
-        //let corPixelAzul = corPreta.style.backgroundColor;
+        corPixel = 'blue';
         corVermelha.className = 'color';
         corPreta.className = 'color';
         corAzul.className = 'color selected';
         corVerde.className = 'color';
-    })
+    });
 
     corVerde.addEventListener('click', function(){
-        //let corPixelVerde = corVermelha.style.backgroundColor;
+        corPixel = 'green';
         corVermelha.className = 'color';
         corPreta.className = 'color';
         corAzul.className = 'color';
         corVerde.className = 'color selected';
-    })
-}
+    });
 
-    //     let corSelecionada = 
-    //     let pixelSelecionado = document.getElementById('li'+)
-    //     let alteraCor = corSelecionada;
-    // }
-
+    document.addEventListener('click', function(e){
+        clickPixel = e.target.id;
+        let alteraCorPixel = document.getElementById(clickPixel);
+        alteraCorPixel.style.backgroundColor = corPixel;
+        console.log(alteraCorPixel);
+    });     
     
     // let calculoTamanho = document.getElementById('calculo-tamanho');
 
@@ -91,4 +93,4 @@ window.onload = function() {
 
     // let colPixel = document.createElement('div');
     // listPixel.appendChild(colPixel);
-
+}
