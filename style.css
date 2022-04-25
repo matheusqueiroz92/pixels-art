@@ -76,13 +76,18 @@ h1 {
     background-color: rgb(192, 192, 192);
 }
 
-.input{
+.board-size{
     margin-bottom: 20px;
 }
 
 #pixel-board {
-    width: 205px;
-    height: 205px;
-    margin-left: 430px;
     text-align: center;
+    width: auto;
+    padding: auto;
+    margin: auto;
+}
+
+#board-size {
+    border: 1px solid black;
+    width: 30px;
 }
