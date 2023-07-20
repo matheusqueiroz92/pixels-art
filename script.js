@@ -35,7 +35,7 @@ window.onload = function paletaCores () {
     calcPixels.className = 'btn-qtd-pixels';
     calcPixels.innerText = 'VQV';
 
-    //calcula o tamanho do do quadro de pixels
+    //calcula o tamanho do quadro de pixels
     calcPixels.addEventListener('click', function (){
         let listaDePixels = document.getElementsByClassName('listaDePixels');
         for(let index = listaDePixels.length - 1; index >= 0; index-= 1) {
@@ -190,7 +190,7 @@ window.onload = function paletaCores () {
     buttonClear.addEventListener('click', function() {
         let listaDePixels = document.querySelectorAll('.pixel');
         for (let i3 = 0; i3 < listaDePixels.length; i3 += 1) {
-            listaDePixels[i3].style.backgroundColor = 'white';   
+            listaDePixels[i3].style.backgroundColor = 'white';
         }
         //console.log(listaDePixels);
     });
